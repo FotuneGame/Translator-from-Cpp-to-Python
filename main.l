@@ -43,7 +43,7 @@
 "case" {return CASE;}
 "default" {return DEFAULT;}
 "break" {return BREAK;}
-"contuine" {return CONTINUE;}
+"continue" {return CONTINUE;}
 "return" {return RETURN;}
 "for" {return FOR;}
 "while" {return WHILE;}
@@ -56,13 +56,13 @@
 "cout" {return COUT;}
 
 [0-9]+ {
-    yylval.number = atof(yytext);
+    yylval.number = atoi(yytext);
     return NUMBER;
 }
 
 [0-9]*\.[0-9]* {
-    yylval.number = atof(yytext);
-    return NUMBER;
+    yylval.numberf = atof(yytext);
+    return NUMBERF;
 }
 
 [_a-zA-Z][_a-zA-Z0-9]* {

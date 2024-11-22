@@ -23,6 +23,7 @@ int* n2(float v2, double v3){
 int main(){
 
  int a,b,ds,s;
+ a,b = 2;
  int g = a+b;
  float c = 1.2 * 2 - (12 || 23) + n(2) / 23.4 + 6 % 3;
  char* str = "hello";
@@ -50,7 +51,7 @@ int main(){
 
 
 int n(float v){
-    return (v + 2 / (12 & 12));
+    return (v + 2 / (12 * 12));
 }
 
 
@@ -100,7 +101,7 @@ int branching(){
     if(120 >= 0){
         int a;
     }else if (2){
-        if(sd){
+        if(a){
             int s;
             int ss2;
         }

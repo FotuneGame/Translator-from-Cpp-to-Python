@@ -7,8 +7,8 @@ import sys
 
 
 def n2(v2, v3):
-	message, sas = 1.000000
-	print(message, "way", 's', (1.000000 + 1.000000))
+	message = sas = 1
+	print(message, "way", 's', (1 + 1))
 	print(message)
 	message = input()
 	message = input()
@@ -16,21 +16,22 @@ def n2(v2, v3):
 	return message
 
 def main():
-	a, b, ds, s
+	a = b = ds = s = None
+	a = b = 2
 	g = a + b
-	c = 1.200000 * 2.000000 - (12.000000 or 23.000000) + n(2.000000) / 23.400000 + 6.000000 % 3.000000
+	c = 1.200000 * 2 - (12 or 23) + n(2) / 23.400000 + 6 % 3
 	str = "hello"
 	vector = None
-	ternar = 2.000000 >= 2.000000 if (g + 10.000000) == 10.000000 else False
-	g = 12.000000
-	g += 1.000000
-	g -= 1.000000
-	g /= 1.000000
-	g *= 1.000000
-	g %= 1.000000
-	g &= 1.000000
-	g ^= 1.000000
-	g |= 1.000000
+	ternar = 2 >= 2 if (g + 10) == 10 else False
+	g = 12
+	g += 1
+	g -= 1
+	g /= 1
+	g *= 1
+	g %= 1
+	g = int(g) & 1
+	g = int(g) ^ 1
+	g = int(g) | 1
 	n(1.200000)
 	n(c)
 	aaa = n2(1.200000, c)
@@ -38,117 +39,117 @@ def main():
 	return g
 
 def n(v):
-	return (v + 2.000000 / (12.000000 & 12.000000))
+	return (v + 2 / (12 * 12))
 
 def n3():
 	return 0
 
 def branching():
-	if (1.000000 > 2.000000):
-		sas = 1.000000
+	if (1 > 2):
+		sas = 1
 		sis = 's'
 		print(sas)
 
-	if (1.000000 > 2.000000):
-		if (2.000000 > 3.000000):
-			sas = 1.000000
-			if (9.000000 != 0.000000):
+	if (1 > 2):
+		if (2 > 3):
+			sas = 1
+			if (9 != 0):
 				sas = input()
 			else:
 				print(sas)
 
 
-		#if (3.000000 > 4.000000):
-		#elif (3.000000 > 4.000000):
+		#if (3 > 4):
+		#elif (3 > 4):
 		#else:
 
 
 	if (True):
-		s
+		s = None
 	else:
-		a
+		a = None
 
-	if (100.000000):
-		a
-	elif (120.000000):
-		a
-	elif (120.000000):
-		if (120.000000 >= 0.000000):
-			a
-		elif (2.000000):
-			if (sd):
-				s
-				ss2
+	if (100):
+		a = None
+	elif (120):
+		a = None
+	elif (120):
+		if (120 >= 0):
+			a = None
+		elif (2):
+			if (a):
+				s = None
+				ss2 = None
 
-			ss1
+			ss1 = None
 
 
-	return 23.000000
+	return 23
 
 def cyrcle():
-	i = 10.000000
-	while (i > 0.000000):
-		s
-		b
-		while (i > 5.000000):
+	i = 10
+	while (i > 0):
+		s = None
+		b = None
+		while (i > 5):
 			if (i):
 				break
 			else:
 				continue
 
 
-		i = i - 1.000000
+		i = i - 1
 
-	#while (2.000000):
+	#while (2):
 
-	i, s = 0.000000
-	while (i < 10.000000):
-		a
-		d = 12.000000
-		o = 1.000000
+	i = s = 0
+	while (i < 10):
+		a = None
+		d = 12
+		o = 1
 		while (o and True):
-			if (not(10.000000)):
+			if (not(10)):
 				break
 
 			continue
-			o -= i % 2.000000
+			o -= i % 2
 		continue
-		i += 1.000000
+		i += 1
 	'''
-	j = 0.000000
-	while (j < 10.000000):
-		j  = j + 1.000000
+	j = 0
+	while (j < 10):
+		j  = j + 1
 	'''
 	return
 
 def switch_case():
-	a
+	a = None
 	a = input()
 	match (a):
-		#case (1.000000):
-		#case (2.000000):
-		case (3.000000):
-			a = 2.000000
-		case (4.000000):
+		#case (1):
+		#case (2):
+		case (3):
+			a = 2
+		case (4):
 			print("WOW")
-			s = 1.000000
+			s = 1
 		case _:
 			print("Default")
 
-	b = 2.000000
+	b = 2
 	#match (b):
 
-	c = 4.000000
+	c = 4
 	match (c):
 		case _:
 			print("C")
-			o = 1.000000
+			o = 1
 
-	d = 5.000000
+	d = 5
 	match (d):
-		case (1.000000):
+		case (1):
 			match (c):
-				case (2.000000):
+				case (2):
 					print("lol")
 
 

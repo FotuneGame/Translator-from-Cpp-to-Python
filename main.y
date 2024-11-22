@@ -23,10 +23,12 @@ char* gen_tabs();
     char var[4098];
     char constant_lexems[32];
     char nonterm[64];
-    double number; 
+    double numberf;
+    int number; 
 }
 
 %token<number> NUMBER;
+%token<numberf> NUMBERF;
 %token<var> TYPE POINT_TYPE NAME;
 %token<constant_lexems> NULLPTR TRUE FALSE SWITCH CASE DEFAULT BREAK CONTINUE RETURN FOR WHILE IF ELSEIF ELSE DO CIN COUT;
 %token <data> LBRACE RBRACE LPAREN RPAREN SEMICOLON COMMA BYTEAND BYTEOR BYTEXOR;
@@ -118,12 +120,12 @@ body: statements {
 
 
 
-statements: declar SEMICOLON {sprintf($$,"%s",$1);}
+statements: declar SEMICOLON {sprintf($$,"%s = None",$1);}
 | declar assign_stmt expression SEMICOLON {sprintf($$,"%s %s %s",$1, $2, $3);} 
 | RETURN expression SEMICOLON {sprintf($$, "return %s",$2);}
 | RETURN SEMICOLON {sprintf($$, "return");}
 | BREAK SEMICOLON {sprintf($$,"break");}
-| CONTINUE SEMICOLON {sprintf($$,"contuine");}
+| CONTINUE SEMICOLON {sprintf($$,"continue");}
 | COUT OUT out_exp SEMICOLON {sprintf($$,"print(%s)",$3);}
 | CIN IN in_exp SEMICOLON {sprintf($$,"%s",$3);}
 | func_call SEMICOLON {sprintf($$,"%s",$1);}
@@ -320,7 +322,7 @@ in_exp: NAME {sprintf($$,"%s = input()",$1)}
 
 
 declar: variable_create {sprintf($$,"%s",$1);}
-    | declar COMMA variable_create {sprintf($$, "%s, %s", $1, $3);}
+    | declar COMMA variable_create {sprintf($$, "%s = %s", $1, $3);}
 
 
 
@@ -353,16 +355,17 @@ assign_stmt: ASSIGN {sprintf($$,"=");}
 | MUL ASSIGN {sprintf($$,"*=");}
 | DIV ASSIGN {sprintf($$,"/=");}
 | REMDIV ASSIGN {sprintf($$,"%%=");}
-| BYTEAND ASSIGN {sprintf($$,"&=");}
-| BYTEOR ASSIGN {sprintf($$,"|=");}
-| BYTEXOR ASSIGN {sprintf($$,"^=");}
+| BYTEAND ASSIGN {sprintf($$,"= int(%s) &",yylval); if(yydebug) printf("Atantion! &= maybe not normal convert for %s!\n",yylval);}
+| BYTEOR ASSIGN {sprintf($$,"= int(%s) |",yylval); if(yydebug) printf("Atantion! |= maybe not normal convert for %s!\n",yylval);}
+| BYTEXOR ASSIGN {sprintf($$,"= int(%s) ^",yylval); if(yydebug) printf("Atantion! ^= maybe not normal convert for %s!\n",yylval);}
 
 variable_create: TYPE NAME {sprintf($$,"%s",$2);}
     | POINT_TYPE NAME {sprintf($$,"%s",$2);}
-    | variable_use {sprintf($$,"%s",$1);}
+    | NAME {sprintf($$,"%s",$1);}
 
 variable_use: NAME {sprintf($$,"%s",$1);}
-    | NUMBER {sprintf($$,"%lf",$1);}
+    | NUMBERF {sprintf($$,"%lf",$1);}
+    | NUMBER {sprintf($$,"%d",$1);}
     | TRUE {sprintf($$,"True");}
     | FALSE {sprintf($$,"False");}
     | DOBLEBUCKET NAME DOBLEBUCKET {sprintf($$,"\"%s\"",$2);}
