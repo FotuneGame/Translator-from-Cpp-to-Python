@@ -1,0 +1,6 @@
+*.exe
+lex.yy.c
+main.output
+main.tab.c
+main.tab.h
+Команды.txt
