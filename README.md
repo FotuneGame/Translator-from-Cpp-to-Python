@@ -1,5 +1,5 @@
 # Команды для запуска
-> перед запуском установите bison, flex, minGW
+> Перед запуском установите bison, flex, minGW;
 
 1) Для main.tab.c и main.tab.h
 '''bison -d -v main.y'''
@@ -12,6 +12,8 @@
 
 4) Запуск транслятора
 '''./[translator-name] [-d] [input-file.cpp]'''
-> путь до транслятора [translator-name]
-> Флаг [-d] отвечает за режим отладки
-> путь до входного C++ фалйа [input-file.cpp]
+> Путь до транслятора [translator-name];
+
+> Флаг [-d] отвечает за режим отладки;
+
+> Путь до входного C++ фалйа [input-file.cpp];
