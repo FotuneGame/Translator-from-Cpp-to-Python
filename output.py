@@ -17,9 +17,9 @@ def n2(v2, v3):
 
 def main():
 	a = b = ds = s = None
-	a = b = 2
-	g = a + b
-	c = 1.200000 * 2 - (12 or 23) + n(2) / 23.400000 + 6 % 3
+	a = b = - 2
+	g = - (a + b)
+	c = + (1.200000 * 2 - (12 or 23) + n(2) / 23.400000 + 6 % 3)
 	str = "hello"
 	vector = None
 	ternar = 2 >= 2 if (g + 10) == 10 else False

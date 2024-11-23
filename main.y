@@ -330,6 +330,8 @@ expression: variable_use {sprintf($$,"%s",$1);}
     | func_call {sprintf($$,"%s",$1);}
     | expression PLUS expression {sprintf($$,"%s + %s",$1,$3);}
     | expression MINUS expression {sprintf($$,"%s - %s",$1,$3);}
+    | PLUS expression {sprintf($$,"+ %s",$2);}
+    | MINUS expression {sprintf($$,"- %s",$2);}
     | expression MUL expression {sprintf($$,"%s * %s",$1,$3);}
     | expression DIV expression {sprintf($$,"%s / %s",$1,$3);}
     | expression REMDIV expression {sprintf($$,"%s %% %s",$1,$3);}
